@@ -2,7 +2,7 @@ import {Component} from "react";
 
 class Car extends Component {
   constructor(props) {
-    super(props);
+    super(props); // Super === parent. This is calling parent constructor (Component) first
 
     // Default state
     this.state = {colour: 'red', make: 'Fiesta'};
