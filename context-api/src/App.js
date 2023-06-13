@@ -17,7 +17,7 @@ const App = () => {
         changeName: changeName
       }}>
         <Navbar />
-        <Layout/>
+        <Layout />
       </UserContext.Provider>
   )
 }
