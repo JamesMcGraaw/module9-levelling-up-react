@@ -1,6 +1,5 @@
 "use strict";
-const submitButton = document.querySelector('button');
-// const submittedAge: string | null = document.querySelector('input').value
+const submitButton = document.querySelector('form');
 const textToEdit = document.querySelector('.answers');
 const mercury = 0.2408467;
 const venus = 0.61519726;
@@ -11,16 +10,22 @@ const uranus = 84.016846;
 const neptune = 164.79132;
 const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("pressed submit");
-    // textToEdit.innerHTML =
-    // "On Mercury you are " + (Number(submittedAge)* mercury)
-    "On Venus you are " +
-        "On Mars you are " +
-        "On Jupiter you are " +
-        "On Saturn you are " +
-        "On Uranus you are " +
-        "On Neptune you are ";
+    const inputBox = document.querySelector('input');
+    let submittedAge = '';
+    if (inputBox) {
+        submittedAge = inputBox.value;
+    }
+    if (textToEdit) {
+        textToEdit.innerHTML =
+            "On Mercury you are " + (Number(submittedAge) / mercury) + '<br>' +
+                "On Venus you are " + (Number(submittedAge) / venus) + '<br>' +
+                "On Mars you are " + (Number(submittedAge) / mars) + '<br>' +
+                "On Jupiter you are " + (Number(submittedAge) / jupiter) + '<br>' +
+                "On Saturn you are " + (Number(submittedAge) / saturn) + '<br>' +
+                "On Uranus you are " + (Number(submittedAge) / uranus) + '<br>' +
+                "On Neptune you are " + (Number(submittedAge) / neptune);
+    }
 };
-// if (button) {
-// submitButton.addEventListener('submit', handleSubmit)
-// }
+if (submitButton) {
+    submitButton.addEventListener('submit', handleSubmit);
+}

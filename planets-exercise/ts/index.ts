@@ -1,6 +1,5 @@
-const submitButton: HTMLButtonElement | null = document.querySelector<HTMLButtonElement>('button');
-// const submittedAge: string | null = document.querySelector('input').value
-const textToEdit: HTMLDivElement | null = document.querySelector('.answers')
+const submitButton: HTMLFormElement | null = document.querySelector<HTMLFormElement>('form');
+const textToEdit: HTMLDivElement | null = document.querySelector<HTMLDivElement>('.answers')
 
 const mercury: number = 0.2408467;
 const venus: number = 0.61519726;
@@ -13,18 +12,28 @@ const neptune: number = 164.79132;
 
 const handleSubmit = (e: SubmitEvent): void => {
     e.preventDefault()
-    console.log("pressed submit")
-    // textToEdit.innerHTML =
-    // "On Mercury you are " + (Number(submittedAge)* mercury)
-    "On Venus you are " +
-    "On Mars you are " +
-    "On Jupiter you are " +
-    "On Saturn you are " +
-    "On Uranus you are " +
-    "On Neptune you are "
+    const inputBox: HTMLInputElement | null = document.querySelector<HTMLInputElement>('input')
+
+    let submittedAge = ''
+
+    if (inputBox){
+        submittedAge = inputBox.value
+    }
+
+    if (textToEdit){
+        textToEdit.innerHTML =
+            "On Mercury you are " + (Number(submittedAge)/ mercury) + '<br>' +
+            "On Venus you are " + (Number(submittedAge)/ venus) + '<br>' +
+            "On Mars you are " + (Number(submittedAge)/ mars) + '<br>' +
+            "On Jupiter you are " + (Number(submittedAge)/ jupiter) + '<br>' +
+            "On Saturn you are " + (Number(submittedAge)/ saturn) + '<br>' +
+            "On Uranus you are " + (Number(submittedAge)/ uranus) + '<br>' +
+            "On Neptune you are " + (Number(submittedAge)/ neptune)
+    }
+
 
 }
 
-// if (button) {
-    // submitButton.addEventListener('submit', handleSubmit)
-// }
+if (submitButton) {
+    submitButton.addEventListener('submit', handleSubmit)
+}
