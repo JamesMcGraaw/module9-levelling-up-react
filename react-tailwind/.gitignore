@@ -21,17 +21,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-.idea/
-/coverage/
-/public/css/*
-!/public/css/bootstrap.min.css
-/vendor/
-/logs/*
-!/logs/README.md
-sendgrid.env
-.env
-.circleci/.config.yml.swp
-.phpunit.result.cache
-/node_modules/
-
