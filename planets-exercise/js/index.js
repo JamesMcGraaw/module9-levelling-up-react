@@ -1,6 +1,6 @@
 "use strict";
-const submitButton = document.querySelector('input');
-const submittedAge = document.querySelector('input').value;
+const submitButton = document.querySelector('button');
+// const submittedAge: string | null = document.querySelector('input').value
 const textToEdit = document.querySelector('.answers');
 const mercury = 0.2408467;
 const venus = 0.61519726;
@@ -12,16 +12,15 @@ const neptune = 164.79132;
 const handleSubmit = (e) => {
     e.preventDefault();
     console.log("pressed submit");
-    textToEdit.innerHTML =
-        "On Mercury you are " + (submittedAge * mercury);
+    // textToEdit.innerHTML =
+    // "On Mercury you are " + (Number(submittedAge)* mercury)
     "On Venus you are " +
         "On Mars you are " +
         "On Jupiter you are " +
         "On Saturn you are " +
         "On Uranus you are " +
-        "On Neptune you are " +
-    ;
+        "On Neptune you are ";
 };
-if (button) {
-    submitButton.addEventListener('submit', handleSubmit);
-}
+// if (button) {
+// submitButton.addEventListener('submit', handleSubmit)
+// }
